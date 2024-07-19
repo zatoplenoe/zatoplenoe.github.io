@@ -12,7 +12,7 @@
 <h1></h1>
 <h4>Сколько съел УЖЕ сушки</h4>
 <form>
-	<input type="number" id="sush" min="0" max="41">
+	<input type="number" id="sush" min="0" max="50">
 </form>
 
 <script>
@@ -30,7 +30,7 @@
 		else {
 			let restProc = 1 - totProc
 			let restVl = restProc * 200
-			let restSu = restProc * 41
+			let restSu = restProc * 50
 			document.getElementById('percentEaten').textContent = "Съел от нормы " + (totProc * 100).toFixed(1) +"%"
 			document.getElementById('restVl').textContent = "докормить влажным  " + restVl.toFixed() + " гр"
 			document.getElementById('restSu').textContent = " ЛИБО сам должен съесть еще сушки " + restSu.toFixed() + " гр"
