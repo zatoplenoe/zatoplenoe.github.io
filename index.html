@@ -5,6 +5,11 @@
 	<title>Martin</title>
 </head>
 <body>
+<h1></h1>
+<h4>Сколько НОРМА СУШКИ:</h4>
+<form>
+	<input type="number" id="normaSush" value = '50'>
+</form>
 <h4>Сколько съел УЖЕ влажника</h4>
 <form>
 	<input type="number" id="vlaj"  min="0" max="200">
@@ -20,8 +25,9 @@
 	function myFunction () {
 		let vl = document.getElementById('vlaj').value
 		let su = document.getElementById('sush').value
+		let normaSush = document.getElementById('normaSush').value
 		let vlProc = vl / 200
-		let suProc = su / 41
+		let suProc = su / normaSush
 		let totProc = vlProc + suProc
 		if(totProc >= 1) {
 			document.getElementById('restVl').textContent = "уже выел норму "
@@ -30,7 +36,7 @@
 		else {
 			let restProc = 1 - totProc
 			let restVl = restProc * 200
-			let restSu = restProc * 50
+			let restSu = restProc * normaSush
 			document.getElementById('percentEaten').textContent = "Съел от нормы " + (totProc * 100).toFixed(1) +"%"
 			document.getElementById('restVl').textContent = "докормить влажным  " + restVl.toFixed() + " гр"
 			document.getElementById('restSu').textContent = " ЛИБО сам должен съесть еще сушки " + restSu.toFixed() + " гр"
